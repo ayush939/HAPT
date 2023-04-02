@@ -1,0 +1,27 @@
+
+
+
+# RNN model
+rnn_model.num_rnn_neurons = 256
+rnn_model.num_rnn_layers = 2
+rnn_model.dropout_rate = 0.14
+rnn_model.num_dense_neurons = 512
+rnn_model.num_dense_layers = 3
+rnn_model.rnn_type = 'gru'
+
+# Training
+Trainer.total_steps = 0.5e4
+Trainer.log_interval = 1e2
+Trainer.ckpt_interval = 1e3
+
+# Input_pipeline
+load.shift_window_size = 125
+load.window_size = 250
+load.existed_tfrecords = False
+load.name = 'hapt'
+load.data_dir = '/home/data/HAPT_dataset'
+prepare.batch_size = 32
+prepare.caching = False
+
+# Evaluation
+evaluate.num_classes = 12
